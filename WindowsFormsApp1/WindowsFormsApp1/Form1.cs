@@ -20,7 +20,11 @@ namespace WindowsFormsApp1
         public Form1()
         {
             InitializeComponent();
-            Ticks = context.Ticks.ToList();
+            //Ticks = context.Ticks.ToList();
+            //List<Tick> l = context.Ticks.ToList();
+
+            //Futtatáskor a Ticks = context.Ticks.ToList(); sorra mindig azt a hibát írja, hogy nem tudott csatlakozni az sql szerverhez, pedig csatlakoztatva van
+
             dataGridView1.DataSource = Ticks;
             CreatePortfolio();
             List<decimal> Nyereségek = new List<decimal>();
