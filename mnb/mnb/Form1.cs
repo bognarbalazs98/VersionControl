@@ -17,7 +17,7 @@ namespace mnb
     public partial class Form1 : Form
     {
         BindingList<RateData> Rates = new BindingList<RateData>();
-
+        BindingList<string> Currencies = new BindingList<string>();
         public Form1()
         {
             InitializeComponent();
@@ -31,9 +31,9 @@ namespace mnb
 
             var request = new GetExchangeRatesRequestBody()
             {
-                currencyNames = comboBox1.SelectedItem.ToString(),
-                startDate = dateTimePicker1.Value.ToShortDateString(),
-                endDate = dateTimePicker2.Value.ToShortDateString()
+                //currencyNames = comboBox1.SelectedItem.ToString(),
+                //startDate = dateTimePicker1.Value.ToShortDateString(),
+                //endDate = dateTimePicker2.Value.ToShortDateString()
             };
 
             var response = mnbService.GetExchangeRates(request);
@@ -97,6 +97,13 @@ namespace mnb
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             RefreshData();
+        }
+
+        public void GetCurrencies()
+        {
+            
+
+
         }
     }
 }
