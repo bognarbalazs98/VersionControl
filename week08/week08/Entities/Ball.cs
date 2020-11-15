@@ -9,11 +9,17 @@ using week08.Abstraction;
 
 namespace week08.Entities
 {
-    public class Ball : Toy
+    public class Ball : Toy 
     {
-       
+        public SolidBrush BallColor { get; private set; }
 
-        protected override void DrawImage(Graphics g)
+    public Ball(Color color)
+    {
+        BallColor = new SolidBrush(color);
+    }
+
+
+    protected override void DrawImage(Graphics g)
         {
             g.FillEllipse(new SolidBrush(Color.Blue), 0, 0, Width, Height);
         }
