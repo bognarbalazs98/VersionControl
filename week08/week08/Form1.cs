@@ -66,11 +66,13 @@ namespace week08
         private void carButton_Click(object sender, EventArgs e)
         {
             Factory = new CarFactory();
+
         }
 
         private void ballButton_Click(object sender, EventArgs e)
         {
-            Factory = new BallFactory();
+            Factory = new BallFactory
+            { BallColor = btnColor.BackColor };
         }
         private void DisplayNext()
         {
@@ -90,7 +92,7 @@ namespace week08
             colorPicker.Color = button.BackColor;
             if (colorPicker.ShowDialog() != DialogResult.OK)
                 return;
-            button.BackColor = colorPicker.Color;
+            btnColor.BackColor = colorPicker.Color;
         }
     }
 }
