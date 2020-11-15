@@ -14,6 +14,9 @@ namespace week08.Entities
             return new Ball();
         }
 
-       
+        public static implicit operator BallFactory(CarFactory v)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
