@@ -25,10 +25,23 @@ namespace week10
 
             ga = gc.ActivateDisplay();
             this.Controls.Add(ga);
-            gc.AddPlayer(100) ;
+            gc.AddPlayer(nbrOfSteps) ;
             
             gc.Start(true);
+            gc.GameOver += Gc_GameOver;
 
+            for (int i = 0; i < populationSize; i++)
+            {
+                gc.AddPlayer(nbrOfSteps);
+            }
+            gc.Start();
+        }
+        private void Gc_GameOver(object sender)
+        {
+            generation++;
+            label1.Text = string.Format(
+                "{0}. generáció",
+                generation);
         }
     }
 }
